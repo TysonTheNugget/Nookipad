@@ -74,8 +74,46 @@ const Home = () => {
     };
   }, []);
 
+  // Dynamically add GIFs from public/assets/memes folder
+  const gifPaths = [
+    '/assets/memes/1.gif',
+    '/assets/memes/2.gif',
+    '/assets/memes/3.gif',
+	'/assets/memes/4.gif',
+	'/assets/memes/5.gif',
+	'/assets/memes/6.gif',
+	'/assets/memes/7.gif',
+	'/assets/memes/8.gif',
+	'/assets/memes/9.gif',
+	'/assets/memes/10.gif',
+	'/assets/memes/11.gif',
+	'/assets/memes/12.gif',
+	'/assets/memes/13.gif',
+	'/assets/memes/14.gif',
+	'/assets/memes/15.gif',
+	'/assets/memes/16.gif',
+	'/assets/memes/17.gif',
+	'/assets/memes/18.gif',
+	'/assets/memes/19.gif',
+	'/assets/memes/21.gif',
+	'/assets/memes/22.gif',
+	'/assets/memes/23.gif',
+	'/assets/memes/24.gif',
+	'/assets/memes/9.png',
+	'/assets/memes/20.png',
+	
+    // Add more gif paths here
+  ];
+
   return (
     <div className="home-container">
+      {/* GIF Background */}
+      <div className="background-gifs">
+        {gifPaths.map((gif, index) => (
+          <img key={index} src={gif} alt={`gif-${index}`} />
+        ))}
+      </div>
+
       {/* Header Section */}
       <header className="header">
         <h1>Ordinooki</h1>
