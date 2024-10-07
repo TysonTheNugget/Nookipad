@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import { Howl } from 'howler';
 import harmonySound from '../assets/sounds/harmony.mp3';
+import nookisImage from '../assets/memes/nookis.png'; // Import the image
+
 
 const Home = () => {
   const soundRef = useRef(null);
@@ -79,38 +81,37 @@ const Home = () => {
     '/assets/memes/1.gif',
     '/assets/memes/2.gif',
     '/assets/memes/3.gif',
-	'/assets/memes/4.gif',
-	'/assets/memes/5.gif',
-	'/assets/memes/6.gif',
-	'/assets/memes/7.gif',
-	'/assets/memes/8.gif',
-	'/assets/memes/9.gif',
-	'/assets/memes/10.gif',
-	'/assets/memes/11.gif',
-	'/assets/memes/12.gif',
-	'/assets/memes/13.gif',
-	'/assets/memes/14.gif',
-	'/assets/memes/15.gif',
-	'/assets/memes/16.gif',
-	'/assets/memes/17.gif',
-	'/assets/memes/18.gif',
-	'/assets/memes/19.gif',
-	'/assets/memes/21.gif',
-	'/assets/memes/22.gif',
-	'/assets/memes/23.gif',
-	'/assets/memes/24.gif',
-	'/assets/memes/9.png',
-	'/assets/memes/20.png',
-	
+    '/assets/memes/4.gif',
+    '/assets/memes/5.gif',
+    '/assets/memes/6.gif',
+    '/assets/memes/7.gif',
+    '/assets/memes/8.gif',
+    '/assets/memes/9.gif',
+    '/assets/memes/10.gif',
+    '/assets/memes/11.gif',
+    '/assets/memes/12.gif',
+    '/assets/memes/13.gif',
+    '/assets/memes/14.gif',
+    '/assets/memes/15.gif',
+    '/assets/memes/16.gif',
+    '/assets/memes/17.gif',
+    '/assets/memes/18.gif',
+    '/assets/memes/19.gif',
+    '/assets/memes/21.gif',
+    '/assets/memes/22.gif',
+    '/assets/memes/23.gif',
+    '/assets/memes/24.gif',
+    '/assets/memes/9.png',
+    '/assets/memes/20.png',
     // Add more gif paths here
   ];
 
-  return (
+ return (
     <div className="home-container">
       {/* GIF Background */}
       <div className="background-gifs">
         {gifPaths.map((gif, index) => (
-          <img key={index} src={gif} alt={`gif-${index}`} />
+          <img key={index} src={gif} alt={`background-gif-${index}`} />
         ))}
       </div>
 
@@ -129,6 +130,7 @@ const Home = () => {
             <div className="dropdown-content">
               <Link to="/about">About</Link>
               <Link to="/nooki-forest">Nooki Forest</Link>
+              {/* Add more navigation links here if needed */}
             </div>
           )}
         </div>
@@ -143,11 +145,18 @@ const Home = () => {
 
       {/* Main Content Containers */}
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="hero-section">
+        {/* Hero Section with Background Image */}
+        <section
+          className="hero-section"
+          style={{
+            background: `url(${nookisImage}) center bottom / cover no-repeat`,
+          }}
+        >
           <h2>Welcome to Ordinooki</h2>
-          <p>Experience the future of blockchain gaming and immersive adventures!</p>
-          {/* Updated Explore Button */}
+          <p>
+            Embark on an epic journey into the future of blockchain gaming and immersive adventures!
+          </p>
+          {/* Explore Button */}
           <a
             href="https://magiceden.us/ordinals/marketplace/ordinookis"
             className="explore-button animate-glow"
@@ -160,26 +169,51 @@ const Home = () => {
 
         {/* Features Section */}
         <section className="features-section">
+          {/* About Feature Card */}
           <div className="feature-card animate-glow">
-            <h3>Blockchain Integration</h3>
-            <p>Secure and transparent transactions powered by blockchain technology.</p>
+            <img src="/assets/memes/24.gif" alt="About" />
+            <h3>About</h3>
+            <p>
+              <Link to="/about">
+                Learn more about the Ordinooki lore and the team behind the magic.
+              </Link>
+            </p>
           </div>
+
+          {/* Discord Feature Card */}
           <div className="feature-card animate-glow">
-            <h3>Immersive Worlds</h3>
-            <p>Explore vast and detailed environments in the Nooki Forest.</p>
+            <img src="/assets/memes/23.gif" alt="Discord" />
+            <h3>Discord</h3>
+            <p>
+              <a
+                href="https://discord.com/invite/NcjVSUJT4J"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join our alpha channel and connect with fellow adventurers!
+              </a>
+            </p>
           </div>
+
+          {/* Launchpad Feature Card */}
           <div className="feature-card animate-glow">
-            <h3>Community Driven</h3>
-            <p>Join a vibrant community of gamers and creators.</p>
+            <img src="/assets/memes/4.gif" alt="Launchpad" />
+            <h3>Launchpad</h3>
+            <p>Exciting features are coming soon. Stay tuned for the launch!</p>
           </div>
         </section>
 
         {/* Call to Action Section */}
         <section className="cta-section">
-          <h2>Join the Ordinooki Adventure</h2>
-          <Link to="/signup" className="signup-button animate-glow">
-            Sign Up Now
-          </Link>
+          <h2>Find us on 𝕏</h2>
+          <a
+            href="https://twitter.com/YourTwitterHandle" // Replace with your actual Twitter handle
+            className="signup-button animate-glow"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow
+          </a>
         </section>
       </main>
 
